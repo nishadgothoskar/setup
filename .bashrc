@@ -106,3 +106,10 @@ alias ec2="ssh -i ~/.ssh/ndl.pem ubuntu@18.222.217.181"
 # alias play="cd ~/play; s .;"
 
 export JULIA_NUM_THREADS=26
+
+xorg () {
+    sudo kill -9 $( ps -e | grep Xorg | awk '{ print $1 }' )
+    sudo /usr/bin/Xorg :0 &
+    export DISPLAY=:0
+}
+
