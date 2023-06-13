@@ -11,8 +11,10 @@ export CPP="/usr/local/opt/llvm/bin/clang"
 export CPPFLAGS="-I/usr/local/opt/llvm/include -fopenmp"
 export LDFLAGS="-L/usr/local/opt/llvm/lib"
 
-if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
+git config --global credential.helper store
+
+if [ -f ~/setup/.git-completion.bash ]; then
+  . ~/setup/.git-completion.bash
 fi
 alias g="git"
 __git_complete g _git
